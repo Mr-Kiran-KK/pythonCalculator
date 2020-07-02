@@ -166,8 +166,16 @@ def num9Clicked():
 
 def dotClicked():
     global val
-    val = val + "."
-    labelid.set(val)
+    global lastVal
+    global s0, s2, s1, s22, s00
+    if s1 != "":
+        s2 = s2 + "."
+
+    else:
+
+        s0 = s0 + "."
+
+    labelid.set(s0 + s1 + s2)
 
 
 def addClicked():
@@ -198,23 +206,22 @@ def divClicked():
 
 def equalClicked():
     if s1 == "+":
-
         temp = s00 + s22
-
-        labelid.set(temp)
-
     elif s1 == "-":
         temp = s00 - s22
-
-        labelid.set(temp)
     elif s1 == "x":
         temp = s00 * s22
-        labelid.set(temp)
     elif s1 == "/":
         temp = s00 / s22
-        labelid.set(temp)
     else:
         print("hai")
+    labelid.set(temp)
+
+def clearClicked():
+    global s0,s1,s2
+    s0=s1=s2=""
+    labelid.set(s0+s1+s2)
+
 
 
 
@@ -240,7 +247,7 @@ ba = Button(window, text="+", width=3, height=1, command=addClicked)
 bs = Button(window, text="-", width=3, height=1,command=minusClicked)
 
 beq = Button(window, text="=", width=3, height=1, command=equalClicked)
-bc = Button(window, text="C", width=3, height=1)
+bc = Button(window, text="C", width=3, height=1,command=clearClicked)
 bdot = Button(window, text=".", width=3, height=1, command=dotClicked)
 
 # applying grid system to all elements
@@ -264,6 +271,7 @@ b0.grid(row=4, column=1, pady=8)
 bdot.grid(row=4, column=2)
 beq.grid(row=4, column=3)
 ba.grid(row=4, column=4)
+bc.grid(row=5,column=1)
 
 # arranging elements
 
