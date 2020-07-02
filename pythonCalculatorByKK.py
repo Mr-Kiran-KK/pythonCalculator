@@ -24,7 +24,7 @@ def num0Clicked():
         s22 = float(s2)
         famous=famous+s2
     else:
-
+        s0=""
         s0 = s0 + "0"
         s00 = float(s0)
         famous=famous+s0
@@ -44,7 +44,7 @@ def num1Clicked():
         s22 = float(s2)
         famous = famous + s2
     else:
-
+        s0 = ""
         s0 = s0 + "1"
         s00 = float(s0)
         famous = famous + s0
@@ -60,7 +60,7 @@ def num2Clicked():
         s22 = float(s2)
         famous = famous + s2
     else:
-
+        s0 = ""
         s0 = s0 + "2"
         s00 = float(s0)
         famous = famous + s0
@@ -78,7 +78,7 @@ def num3Clicked():
         s22 = float(s2)
         famous = famous + s2
     else:
-
+        s0 = ""
         s0 = s0 + "3"
         s00 = float(s0)
         famous = famous + s0
@@ -96,7 +96,7 @@ def num4Clicked():
         s22 = float(s2)
         famous = famous + s2
     else:
-
+        s0 = ""
         s0 = s0 + "4"
         s00 = float(s0)
         famous = famous + s0
@@ -114,7 +114,7 @@ def num5Clicked():
         s22 = float(s2)
         famous = famous + s2
     else:
-
+        s0 = ""
         s0 = s0 + "5"
         s00 = float(s0)
         famous = famous + s0
@@ -132,7 +132,7 @@ def num6Clicked():
         s22 = float(s2)
         famous = famous + s2
     else:
-
+        s0 = ""
         s0 = s0 + "6"
         s00 = float(s0)
         famous = famous + s0
@@ -150,7 +150,7 @@ def num7Clicked():
         s22 = float(s2)
         famous = famous + s2
     else:
-
+        s0 = ""
         s0 = s0 + "7"
         s00 = float(s0)
         famous = famous + s0
@@ -168,7 +168,7 @@ def num8Clicked():
         s22 = float(s2)
         famous = famous + s2
     else:
-
+        s0 = ""
         s0 = s0 + "8"
         s00 = float(s0)
         famous = famous + s0
@@ -186,7 +186,7 @@ def num9Clicked():
         s22 = float(s2)
         famous = famous + s2
     else:
-
+        s0 = ""
         s0 = s0 + "9"
         s00 = float(s0)
         famous = famous + s0
@@ -196,15 +196,17 @@ def num9Clicked():
 def dotClicked():
     global val
     global lastVal
+    global famous
     global s0, s2, s1, s22, s00
     if s1 != "":
+        s2=""
         s2 = s2 + "."
-
+        famous = famous + s2
     else:
-
+        s0=""
         s0 = s0 + "."
-
-    labelid.set(s0 + s1 + s2)
+        famous = famous + s0
+    labelid.set(famous)
 
 
 def addClicked():
