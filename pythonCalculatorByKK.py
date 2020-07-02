@@ -15,115 +15,153 @@ lastVal = ""
 def num0Clicked():
     global val
     global lastVal
-    if val == "":
-        val = val + "0"
-        labelid.set(val)
+    global s0, s2, s1, s22, s00
+    if s1 != "":
+        s2 = s2 + "0"
+        s22 = float(s2)
     else:
-        lastVal = operatorVal + "0"
-        labelid.set(lastVal)
+
+        s0 = s0 + "0"
+        s00 = float(s0)
+    labelid.set(s0 + s1 + s2)
+
+
+def num2Clicked():
+    global val
+    global lastVal
+    global s0, s2, s1, s22, s00
+    if s1 != "":
+        s2 = s2 + "2"
+        s22 = float(s2)
+    else:
+
+        s0 = s0 + "2"
+        s00 = float(s0)
+    labelid.set(s0 + s1 + s2)
 
 
 def num1Clicked():
     global val
     global lastVal
-    global s0,s2
-    if val == "":
-        val = val + "1"
-
-        labelid.set("1")
-        s0 = float(val)
+    global s0,s2,s1,s22,s00
+    if s1 != "":
+        s2 = s2 + "1"
+        s22 = float(s2)
     else:
 
-        lastVal = operatorVal + "1"
-        labelid.set(lastVal)
-        s2 = float(val)
-
+        s0 = s0 + "1"
+        s00 = float(s0)
+    labelid.set(s0 + s1 + s2)
 def num2Clicked():
     global val
     global lastVal
-    if val == "":
-        val = val + "2"
-        labelid.set(val)
+    global s0, s2, s1, s22, s00
+    if s1 != "":
+        s2 = s2 + "2"
+        s22 = float(s2)
     else:
-        lastVal = operatorVal + "2"
-        labelid.set(lastVal)
+
+        s0 = s0 + "2"
+        s00 = float(s0)
+    labelid.set(s0 + s1 + s2)
 
 
 def num3Clicked():
     global val
     global lastVal
-    if val == "":
-        val = val + "3"
-        labelid.set(val)
+    global s0, s2, s1, s22, s00
+    if s1 != "":
+        s2 = s2 + "3"
+        s22 = float(s2)
     else:
-        lastVal = operatorVal + "3"
-        labelid.set(lastVal)
+
+        s0 = s0 + "3"
+        s00 = float(s0)
+    labelid.set(s0 + s1 + s2)
 
 
 def num4Clicked():
     global val
     global lastVal
-    if val == "":
-        val = val + "4"
-        labelid.set(val)
+    global s0, s2, s1, s22, s00
+    if s1 != "":
+        s2 = s2 + "4"
+        s22 = float(s2)
     else:
-        lastVal = operatorVal + "4"
-        labelid.set(lastVal)
+
+        s0 = s0 + "4"
+        s00 = float(s0)
+    labelid.set(s0 + s1 + s2)
 
 
 def num5Clicked():
     global val
     global lastVal
-    if val == "":
-        val = val + "5"
-        labelid.set(val)
+    global s0, s2, s1, s22, s00
+    if s1 != "":
+        s2 = s2 + "5"
+        s22 = float(s2)
     else:
-        lastVal = operatorVal + "5"
-        labelid.set(lastVal)
+
+        s0 = s0 + "5"
+        s00 = float(s0)
+    labelid.set(s0 + s1 + s2)
 
 
 def num6Clicked():
     global val
     global lastVal
-    if val == "":
-        val = val + ""
-        labelid.set(val)
+    global s0, s2, s1, s22, s00
+    if s1 != "":
+        s2 = s2 + "6"
+        s22 = float(s2)
     else:
-        lastVal = operatorVal + "6"
-        labelid.set(lastVal)
+
+        s0 = s0 + "6"
+        s00 = float(s0)
+    labelid.set(s0 + s1 + s2)
 
 
 def num7Clicked():
     global val
     global lastVal
-    if val == "":
-        val = val + "7"
-        labelid.set(val)
+    global s0, s2, s1, s22, s00
+    if s1 != "":
+        s2 = s2 + "7"
+        s22 = float(s2)
     else:
-        lastVal = operatorVal + "7"
-        labelid.set(lastVal)
+
+        s0 = s0 + "7"
+        s00 = float(s0)
+    labelid.set(s0 + s1 + s2)
 
 
 def num8Clicked():
     global val
     global lastVal
-    if val == "":
-        val = val + "8"
-        labelid.set(val)
+    global s0, s2, s1, s22, s00
+    if s1 != "":
+        s2 = s2 + "8"
+        s22 = float(s2)
     else:
-        lastVal = operatorVal + "8"
-        labelid.set(lastVal)
+
+        s0 = s0 + "8"
+        s00 = float(s0)
+    labelid.set(s0 + s1 + s2)
 
 
 def num9Clicked():
     global val
     global lastVal
-    if val == "":
-        val = val + "9"
-        labelid.set(val)
+    global s0, s2, s1, s22, s00
+    if s1 != "":
+        s2 = s2 + "9"
+        s22 = float(s2)
     else:
-        lastVal = operatorVal + "9"
-        labelid.set(lastVal)
+
+        s0 = s0 + "9"
+        s00 = float(s0)
+    labelid.set(s0 + s1 + s2)
 
 
 def dotClicked():
@@ -136,44 +174,44 @@ def addClicked():
     global operatorVal
     global s1
     s1 = "+"
-    operatorVal = val + s1
+    operatorVal = s0 + s1
     labelid.set(operatorVal)
 def minusClicked():
     global operatorVal
     global s1
     s1 = "-"
-    operatorVal = val + s1
+    operatorVal = s0 + s1
     labelid.set(operatorVal)
 def multClicked():
     global operatorVal
     global s1
     s1 = "x"
-    operatorVal = val + s1
+    operatorVal = s0 + s1
     labelid.set(operatorVal)
 def divClicked():
     global operatorVal
     global s1
     s1 = "/"
-    operatorVal = val + s1
+    operatorVal = s0 + s1
     labelid.set(operatorVal)
 
 
 def equalClicked():
     if s1 == "+":
 
-        temp = s0 + s2
+        temp = s00 + s22
 
         labelid.set(temp)
 
     elif s1 == "-":
-        temp = s0 - s2
+        temp = s00 - s22
 
         labelid.set(temp)
     elif s1 == "x":
-        temp = s0 * s2
+        temp = s00 * s22
         labelid.set(temp)
     elif s1 == "/":
-        temp = s0 / s2
+        temp = s00 / s22
         labelid.set(temp)
     else:
         print("hai")
