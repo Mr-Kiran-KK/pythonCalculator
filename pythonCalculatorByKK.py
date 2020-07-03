@@ -2,7 +2,7 @@
 from tkinter import *
 
 window = Tk()
-window.geometry("200x200")
+window.geometry("200x300")
 window.title("I Calculate")
 window.configure(bg='#456A8F')
 s0 = s1 = s2 = ""
@@ -10,7 +10,7 @@ val = ""
 operatorVal = ""
 lastVal = ""
 famous=""
-
+isBackspaceClicked = False
 
 # function definitions
 def num0Clicked():
@@ -184,7 +184,8 @@ def num9Clicked():
         s2 = ""
         s2 = s2 + "9"
         s22 = float(s2)
-        famous = famous + s2
+
+
     else:
         s0 = ""
         s0 = s0 + "9"
@@ -255,6 +256,21 @@ def clearClicked():
     s0=s1=s2=""
     labelid.set(s0+s1+s2)
 
+def backSpaceClicked():
+    global isBackspaceClicked,famous
+    isBackspaceClicked=True
+    if isBackspaceClicked == False:
+        famous = famous + s0
+    else:
+        print("enetr")
+        lengthOfFamous = len(famous) - 1
+        newfamous = famous[0:lengthOfFamous]
+        famous = newfamous
+        isBackspaceClicked = False
+    labelid.set(famous)
+
+
+
 
 
 
@@ -283,6 +299,8 @@ beq = Button(window, text="=", width=3, height=1, command=equalClicked)
 bc = Button(window, text="C", width=3, height=1,command=clearClicked)
 bdot = Button(window, text=".", width=3, height=1, command=dotClicked)
 
+bback = Button(window,text="back",width=3, height=1, command=backSpaceClicked)
+
 # applying grid system to all elements
 label.grid(row=0, columnspan=10, padx=6, pady=8)
 b7.grid(row=1, column=1, padx=10, pady=8)
@@ -305,6 +323,7 @@ bdot.grid(row=4, column=2)
 beq.grid(row=4, column=3)
 ba.grid(row=4, column=4)
 bc.grid(row=5,column=1)
+bback.grid(row=5,column=2)
 
 # arranging elements
 
