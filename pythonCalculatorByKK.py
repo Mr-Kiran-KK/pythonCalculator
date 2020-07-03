@@ -1,6 +1,6 @@
 # python calculator
 from tkinter import *
-
+import math
 window = Tk()
 window.geometry("200x300")
 window.title("I Calculate")
@@ -10,7 +10,8 @@ val = ""
 operatorVal = ""
 lastVal = ""
 famous=""
-isBackspaceClicked = False
+equalClickedOn = False
+
 
 # function definitions
 def num0Clicked():
@@ -184,8 +185,7 @@ def num9Clicked():
         s2 = ""
         s2 = s2 + "9"
         s22 = float(s2)
-
-
+        famous = famous + s2
     else:
         s0 = ""
         s0 = s0 + "9"
@@ -243,31 +243,56 @@ def divClicked():
     famous = famous + s1
     labelid.set(famous)
 
+def powerClicked():
+    global famous
+    global operatorVal
+    global s1
+    s1 = "^"
+    operatorVal = s0 + s1
+    famous=famous+s1
+    labelid.set(famous)
+
 
 def equalClicked():
+        global s0,s2
+        if s1 == "^":
+            labelid.set(pow(int(s0),int(s2)))
+            s0=s2=""
 
-        answer=eval(famous)
-        labelid.set("")
-        labelid.set(answer)
+
+        else:
+          global equalClickedOn
+          answer=eval(famous)
+          labelid.set("")
+          labelid.set(answer)
+          equalClickedOn = True
+
 
 
 def clearClicked():
-    global s0,s1,s2
-    s0=s1=s2=""
-    labelid.set(s0+s1+s2)
+    global famous,s0,s1,s2
+    s0=s1=s2=famous=""
+    labelid.set(famous)
 
 def backSpaceClicked():
-    global isBackspaceClicked,famous
-    isBackspaceClicked=True
-    if isBackspaceClicked == False:
-        famous = famous + s0
+    global famous
+    if equalClickedOn == False:
+         lengthOfFamous = len(famous) - 1
+         newfamous = famous[0:lengthOfFamous]
+         famous = newfamous
+         labelid.set(famous)
     else:
-        print("enetr")
-        lengthOfFamous = len(famous) - 1
-        newfamous = famous[0:lengthOfFamous]
-        famous = newfamous
-        isBackspaceClicked = False
-    labelid.set(famous)
+        famous = ""
+        labelid.set(famous)
+def squareRoot():
+    labelid.set( round(math.sqrt(int(labelid.get()))))
+
+
+
+
+
+
+
 
 
 
@@ -301,29 +326,39 @@ bdot = Button(window, text=".", width=3, height=1, command=dotClicked)
 
 bback = Button(window,text="back",width=3, height=1, command=backSpaceClicked)
 
+
+bpower = Button(window,text="^",width=3, height=1, command=powerClicked)
+bsqrt = Button(window,text="√",width=3, height=1, command=squareRoot)
+
+
 # applying grid system to all elements
 label.grid(row=0, columnspan=10, padx=6, pady=8)
-b7.grid(row=1, column=1, padx=10, pady=8)
-b8.grid(row=1, column=2, padx=10)
-b9.grid(row=1, column=3, padx=10)
+b7.grid(row=2, column=1, padx=10, pady=8)
+b8.grid(row=2, column=2, padx=10)
+b9.grid(row=2, column=3, padx=10)
 bd.grid(row=1, column=4, padx=10)
 
-b4.grid(row=2, column=1, pady=8)
-b5.grid(row=2, column=2)
-b6.grid(row=2, column=3)
+b4.grid(row=3, column=1, pady=8)
+b5.grid(row=3, column=2)
+b6.grid(row=3, column=3)
 bm.grid(row=2, column=4)
 
-b1.grid(row=3, column=1, pady=8)
-b2.grid(row=3, column=2)
-b3.grid(row=3, column=3)
+b1.grid(row=4, column=1, pady=8)
+b2.grid(row=4, column=2)
+b3.grid(row=4, column=3)
 bs.grid(row=3, column=4)
 
-b0.grid(row=4, column=1, pady=8)
-bdot.grid(row=4, column=2)
-beq.grid(row=4, column=3)
+b0.grid(row=5, column=1, pady=8)
+bdot.grid(row=5, column=2)
+beq.grid(row=5, column=4)
 ba.grid(row=4, column=4)
-bc.grid(row=5,column=1)
-bback.grid(row=5,column=2)
+bc.grid(row=1,column=1,pady=8)
+bback.grid(row=1,column=2)
+
+bpower.grid(row=5,column=3)
+bsqrt.grid(row=1,column=3)
+
+
 
 # arranging elements
 
