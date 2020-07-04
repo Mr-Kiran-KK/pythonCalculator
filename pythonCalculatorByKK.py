@@ -1,10 +1,11 @@
 # python calculator
 from tkinter import *
 import math
+import tkinter.font as tkFont
 window = Tk()
-window.geometry("200x300")
+window.geometry("230x350")
 window.title("I Calculate")
-window.configure(bg='#456A8F')
+window.configure(bg='#000066')
 s0 = s1 = s2 = ""
 val = ""
 operatorVal = ""
@@ -12,6 +13,8 @@ lastVal = ""
 famous=""
 equalClickedOn = False
 
+font=('verdana',10,'')
+fontLabel=('verdana',12,'')
 
 # function definitions
 def num0Clicked():
@@ -285,7 +288,56 @@ def backSpaceClicked():
         famous = ""
         labelid.set(famous)
 def squareRoot():
-    labelid.set( round(math.sqrt(int(labelid.get()))))
+    labelid.set(math.sqrt(int(labelid.get())))
+def darkClicked():
+    window.config(bg="#000000")
+    b0.config(bg='#000000')
+    b1.config(bg='#000000')
+    b2.config(bg='#000000')
+    b3.config(bg='#000000')
+    b4.config(bg='#000000')
+    b5.config(bg='#000000')
+    b6.config(bg='#000000')
+    b7.config(bg='#000000')
+    b8.config(bg='#000000')
+    b9.config(bg='#000000')
+    ba.config(bg='#000000')
+    bs.config(bg='#000000')
+    bd.config(bg='#000000')
+    bm.config(bg='#000000')
+    beq.config(bg='#000000')
+    bc.config(bg='#000000')
+    bdot.config(bg='#000000')
+    bback.config(bg='#000000')
+    bdark.config(bg='#000000')
+    blight.config(bg='#000000')
+    bsqrt.config(bg='#000000')
+    bpower.config(bg='#000000')
+
+def lightClicked():
+    window.config(bg='#000066')
+    b0.config(bg='#000066')
+    b1.config(bg='#000066')
+    b2.config(bg='#000066')
+    b3.config(bg='#000066')
+    b4.config(bg='#000066')
+    b5.config(bg='#000066')
+    b6.config(bg='#000066')
+    b7.config(bg='#000066')
+    b8.config(bg='#000066')
+    b9.config(bg='#000066')
+    ba.config(bg='#000066')
+    bs.config(bg='#000066')
+    bd.config(bg='#000066')
+    bm.config(bg='#000066')
+    beq.config(bg='#000066')
+    bc.config(bg='#000066')
+    bdot.config(bg='#000066')
+    bback.config(bg='#000066')
+    bdark.config(bg='#000066')
+    blight.config(bg='#000066')
+    bsqrt.config(bg='#000066')
+    bpower.config(bg='#000066')
 
 
 
@@ -301,62 +353,88 @@ def squareRoot():
 
 # creating a text field
 labelid = StringVar()
-label = Label(window, text="", width=26, textvariable=labelid, anchor=E)
+
+
+label = Label(window, text="", width=20, height=0,textvariable=labelid,padx=5,pady=10,anchor='e',font=fontLabel)
+
+
+
 
 # creating buttons
-b0 = Button(window, text="0", width=3, height=1, command=num0Clicked)
-b1 = Button(window, text="1", width=3, height=1, command=num1Clicked)
-b2 = Button(window, text="2", width=3, height=1, command=num2Clicked)
-b3 = Button(window, text="3", width=3, height=1, command=num3Clicked)
-b4 = Button(window, text="4", width=3, height=1, command=num4Clicked)
-b5 = Button(window, text="5", width=3, height=1, command=num5Clicked)
-b6 = Button(window, text="6", width=3, height=1, command=num6Clicked)
-b7 = Button(window, text="7", width=3, height=1, command=num7Clicked)
-b8 = Button(window, text="8", width=3, height=1, command=num8Clicked)
-b9 = Button(window, text="9", width=3, height=1, command=num9Clicked)
+b0 = Button(window, text="0", width=5, height=2, command=num0Clicked,activebackground='#000000',
+            activeforeground='#fff',bg='#000066',borderwidth=0,foreground='#fff',font=font)
+b1 = Button(window, text="1", width=5, height=2, command=num1Clicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
+b2 = Button(window, text="2", width=5, height=2, command=num2Clicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
+b3 = Button(window, text="3", width=5, height=2, command=num3Clicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
+b4 = Button(window, text="4", width=5, height=2, command=num4Clicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
+b5 = Button(window, text="5", width=5, height=2, command=num5Clicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
+b6 = Button(window, text="6", width=5, height=2, command=num6Clicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
+b7 = Button(window, text="7", width=5, height=2, command=num7Clicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
+b8 = Button(window, text="8", width=5, height=2, command=num8Clicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
+b9 = Button(window, text="9", width=5, height=2, command=num9Clicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
 
-bd = Button(window, text="/", width=3, height=1,command=divClicked)
-bm = Button(window, text="x", width=3, height=1,command=multClicked)
-ba = Button(window, text="+", width=3, height=1, command=addClicked)
-bs = Button(window, text="-", width=3, height=1,command=minusClicked)
+bd = Button(window, text="/", width=5, height=2,command=divClicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
+bm = Button(window, text="x", width=5, height=2,command=multClicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
+ba = Button(window, text="+", width=5, height=2, command=addClicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
+bs = Button(window, text="-", width=5, height=2,command=minusClicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
 
-beq = Button(window, text="=", width=3, height=1, command=equalClicked)
-bc = Button(window, text="C", width=3, height=1,command=clearClicked)
-bdot = Button(window, text=".", width=3, height=1, command=dotClicked)
+beq = Button(window, text="=", width=5, height=2, command=equalClicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
+bc = Button(window, text="C", width=5, height=2,command=clearClicked,bg='#000066',borderwidth=0,foreground='#fff',font=font )
+bdot = Button(window, text=".", width=5, height=2, command=dotClicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
 
-bback = Button(window,text="back",width=3, height=1, command=backSpaceClicked)
+bback = Button(window,text="back",width=5, height=2, command=backSpaceClicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
 
 
-bpower = Button(window,text="^",width=3, height=1, command=powerClicked)
-bsqrt = Button(window,text="√",width=3, height=1, command=squareRoot)
+bpower = Button(window,text="^",width=5, height=2, command=powerClicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
+bsqrt = Button(window,text="√",width=5, height=2, command=squareRoot,bg='#000066',borderwidth=0,foreground='#fff',font=font)
+bdark = Button(window,text="dark",width=11, height=2, command=darkClicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
+blight = Button(window,text="light",width=11, height=2, command=lightClicked,bg='#000066',borderwidth=0,foreground='#fff',font=font)
+
+
+
+
+
 
 
 # applying grid system to all elements
-label.grid(row=0, columnspan=10, padx=6, pady=8)
-b7.grid(row=2, column=1, padx=10, pady=8)
-b8.grid(row=2, column=2, padx=10)
-b9.grid(row=2, column=3, padx=10)
-bd.grid(row=1, column=4, padx=10)
 
-b4.grid(row=3, column=1, pady=8)
-b5.grid(row=3, column=2)
-b6.grid(row=3, column=3)
-bm.grid(row=2, column=4)
+label.grid(row=2, columnspan=4,pady=30,padx=7)
 
-b1.grid(row=4, column=1, pady=8)
-b2.grid(row=4, column=2)
-b3.grid(row=4, column=3)
-bs.grid(row=3, column=4)
 
-b0.grid(row=5, column=1, pady=8)
-bdot.grid(row=5, column=2)
-beq.grid(row=5, column=4)
-ba.grid(row=4, column=4)
-bc.grid(row=1,column=1,pady=8)
-bback.grid(row=1,column=2)
+bc.grid(row=4,column=0)
+bback.grid(row=4,column=1,)
+bsqrt.grid(row=4,column=2)
+bd.grid(row=4, column=3)
 
-bpower.grid(row=5,column=3)
-bsqrt.grid(row=1,column=3)
+b7.grid(row=5, column=0)
+b8.grid(row=5, column=1)
+b9.grid(row=5, column=2)
+bm.grid(row=5, column=3)
+
+b4.grid(row=6, column=0)
+b5.grid(row=6, column=1)
+b6.grid(row=6, column=2)
+bs.grid(row=6, column=3)
+
+b1.grid(row=7, column=0)
+b2.grid(row=7, column=1)
+b3.grid(row=7, column=2)
+ba.grid(row=7, column=3)
+
+b0.grid(row=8, column=0)
+bdot.grid(row=8, column=1)
+bpower.grid(row=8,column=2)
+beq.grid(row=8, column=3)
+bdark.grid(row=9,column=0,columnspan=2)
+blight.grid(row=9,column=2,columnspan=2)
+
+
+
+
+
+
+
+
 
 
 
