@@ -9,9 +9,6 @@ window.title("I Calculate")
 window.configure(bg='#000066')
 window.resizable(0,0)
 s0 = s1 = s2 = ""
-val = ""
-operatorVal = ""
-lastVal = ""
 famous=""
 equalClickedOn = False
 
@@ -20,169 +17,128 @@ font=('verdana',10)
 def num0Clicked():
     global famous
     global val
-    global lastVal
-    global s0, s2, s1, s22, s00
+    global s0, s2, s1
     if s1 != "":
         s2=""
         s2 = s2 + "0"
-        s22 = float(s2)
         famous=famous+s2
     else:
         s0=""
         s0 = s0 + "0"
-        s00 = float(s0)
         famous=famous+s0
     labelid.set(famous)
 def num1Clicked():
     global famous
-    global val
-    global lastVal
-    global s0,s2,s1,s22,s00
+    global s0,s2,s1
     if s1 != "":
         s2 = ""
         s2 = s2 + "1"
-        s22 = float(s2)
         famous = famous + s2
     else:
         s0 = ""
         s0 = s0 + "1"
-        s00 = float(s0)
         famous = famous + s0
     labelid.set(famous)
 def num2Clicked():
     global famous
-    global val
-    global lastVal
-    global s0, s2, s1, s22, s00
+    global s0, s2, s1
     if s1 != "":
         s2 = ""
         s2 = s2 + "2"
-        s22 = float(s2)
         famous = famous + s2
     else:
         s0 = ""
         s0 = s0 + "2"
-        s00 = float(s0)
         famous = famous + s0
     labelid.set(famous)
 def num3Clicked():
     global famous
-    global val
-    global lastVal
-    global s0, s2, s1, s22, s00
+    global s0, s2, s1
     if s1 != "":
         s2 = ""
         s2 = s2 + "3"
-        s22 = float(s2)
         famous = famous + s2
     else:
         s0 = ""
         s0 = s0 + "3"
-        s00 = float(s0)
         famous = famous + s0
     labelid.set(famous)
 def num4Clicked():
     global famous
-    global val
-    global lastVal
-    global s0, s2, s1, s22, s00
+    global s0, s2, s1
     if s1 != "":
         s2 = ""
         s2 = s2 + "4"
-        s22 = float(s2)
         famous = famous + s2
     else:
         s0 = ""
         s0 = s0 + "4"
-        s00 = float(s0)
         famous = famous + s0
     labelid.set(famous)
 def num5Clicked():
     global famous
-    global val
-    global lastVal
-    global s0, s2, s1, s22, s00
+    global s0, s2, s1
     if s1 != "":
         s2 = ""
         s2 = s2 + "5"
-        s22 = float(s2)
         famous = famous + s2
     else:
         s0 = ""
         s0 = s0 + "5"
-        s00 = float(s0)
         famous = famous + s0
     labelid.set(famous)
 def num6Clicked():
     global famous
-    global val
-    global lastVal
-    global s0, s2, s1, s22, s00
+    global s0, s2, s1
     if s1 != "":
         s2 = ""
         s2 = s2 + "6"
-        s22 = float(s2)
         famous = famous + s2
     else:
         s0 = ""
         s0 = s0 + "6"
-        s00 = float(s0)
         famous = famous + s0
     labelid.set(famous)
 def num7Clicked():
     global famous
-    global val
-    global lastVal
-    global s0, s2, s1, s22, s00
+    global s0, s2, s1
     if s1 != "":
         s2 = ""
         s2 = s2 + "7"
-        s22 = float(s2)
         famous = famous + s2
     else:
         s0 = ""
         s0 = s0 + "7"
-        s00 = float(s0)
         famous = famous + s0
     labelid.set(famous)
 def num8Clicked():
     global famous
-    global val
-    global lastVal
-    global s0, s2, s1, s22, s00
+    global s0, s2, s1
     if s1 != "":
         s2 = ""
         s2 = s2 + "8"
-        s22 = float(s2)
         famous = famous + s2
     else:
         s0 = ""
         s0 = s0 + "8"
-        s00 = float(s0)
         famous = famous + s0
     labelid.set(famous)
 def num9Clicked():
     global famous
-    global val
-    global lastVal
-    global s0, s2, s1, s22, s00
+    global s0, s2, s1
     if s1 != "":
         s2 = ""
         s2 = s2 + "9"
-        s22 = float(s2)
         famous = famous + s2
     else:
         s0 = ""
         s0 = s0 + "9"
-        s00 = float(s0)
         famous = famous + s0
     labelid.set(famous)
 
 def dotClicked():
-    global val
-    global lastVal
     global famous
-    global s0, s2, s1, s22, s00
+    global s0, s2, s1
     if s1 != "":
         s2=""
         s2 = s2 + "."
@@ -194,43 +150,33 @@ def dotClicked():
     labelid.set(famous)
 def addClicked():
     global famous
-    global operatorVal
     global s1
     s1 = "+"
-    operatorVal = s0 + s1
     famous=famous+s1
     labelid.set(famous)
 def minusClicked():
     global famous
-    global operatorVal
     global s1
     s1 = "-"
-    operatorVal = s0 + s1
     famous = famous + s1
     labelid.set(famous)
 def multClicked():
     global famous
-    global operatorVal
     global s1
     s1 = "*"
-    operatorVal = s0 + s1
     famous = famous + s1
     labelid.set(famous)
 def divClicked():
     global famous
-    global operatorVal
     global s1
     s1 = "/"
-    operatorVal = s0 + s1
     famous = famous + s1
     labelid.set(famous)
 
 def powerClicked():
     global famous
-    global operatorVal
     global s1
     s1 = "^"
-    operatorVal = s0 + s1
     famous=famous+s1
     labelid.set(famous)
 def equalClicked():
